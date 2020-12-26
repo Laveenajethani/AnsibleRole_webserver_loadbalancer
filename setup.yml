@@ -1,0 +1,13 @@
+- hosts: webserver
+  become: yes
+  become_method: sudo 
+  become_user: root
+  roles:
+  - role: "myapache"
+
+- hosts: loadbalancer
+  become: yes
+  become_method: sudo
+  become_user: root
+  roles:
+  - role: "mylbrole"
